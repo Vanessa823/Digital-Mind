@@ -38,7 +38,6 @@ class EmpleadoController extends Controller
             'nombre_empleado'=> 'required|min:4|max:100|unique:empleados'
         ]);
         $empleado = Empleado::create($request->all());
-        $empleado->areas()->sync($request->areas);
         return redirect()
                 ->route('empleados.index')
                 ->with('success','Empleado registrado correctamente.');
