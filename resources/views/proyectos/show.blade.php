@@ -22,9 +22,10 @@
                 <h5 class="card-title">Inicio {{$proyecto->fecha_inicio}}</h5>
                 <h5 class="card-title">Entrega {{$proyecto->fecha_entrega}}</h5>
                 <h5 class="card-title">{{$proyecto->avance}} %</h5>
+                <h5 class="card-title">Responsables de proyecto:</h5
                 @foreach ($empleados as $id_empleado => $nombre_empleado)
                   @if($proyecto->empleados->pluck('id_empleado')->contains($id_empleado)) 
-                  <h5 class="card-title">Responsables:<br> {{$nombre_empleado}}</h5>
+                   <label> {{$nombre_empleado}}<br></label>
                   @endif
                 @endforeach
               </div>
