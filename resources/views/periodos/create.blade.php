@@ -16,7 +16,7 @@
               <div class="col-md-6">
                 <label for="mes" class="form-label">Mes evaluable</label>
                 <input type="text" class="form-control shadow-none" id="mes" name="mes" value="{{old('mes')}}">
-                @error('nombre_criterio') 
+                @error('mes') 
                     <small class="text-danger">
                         {{$message}}
                     </small>    
@@ -24,13 +24,13 @@
               </div>
               <div class="col-md-6">
                 <label for="estatus" class="form-label">Estatus</label>
-                <select name="estatus" id="estatus">
-                    <option value="evaluado">Evaluado</option>
+                <select name="estatus" class="form-select shadow-none" id="estatus">
                     <option value="actual">Actual</option>
+                    <option value="evaluado">Evaluado</option>
                     <option value="futuro">Futuro</option>
                     <!-- Agrega más opciones según sea necesario -->
                 </select>
-                @error('nombre_criterio') 
+                @error('estatus') 
                     <small class="text-danger">
                         {{$message}}
                     </small>    
