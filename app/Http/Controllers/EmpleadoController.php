@@ -15,9 +15,9 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        $areas= Area::All();
+        
         $empleados = Empleado::orderBy('id_empleado','ASC')->paginate(8);
-        return view('empleados.index',['empleados'=> $empleados,'areas'=>$areas]);
+        return view('empleados.index',['empleados'=> $empleados]);
     }
 
     /**
@@ -25,8 +25,8 @@ class EmpleadoController extends Controller
      */
     public function create()
     {
-        $areas= Area::pluck('nombre_area','id_area');
-        return view('empleados.create',['areas'=>$areas]);
+        
+        return view('empleados.create');
     }
 
     /**
