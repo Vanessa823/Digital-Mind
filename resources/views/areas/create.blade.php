@@ -22,6 +22,34 @@
                     </small>    
                 @enderror 
               </div>
+            div class="col-md-6">
+                <label for="tareas" class="form-label">Tareas</label><br>
+                  
+                @if(sizeof($criterios) > 0)
+                  @foreach ($criterios as $id_criterio => $nombre_criterio)
+                      <div>
+                      <input type="checkbox" 
+                             value="{{ $id_criterio }}" 
+                             name="criterios[]" 
+                      {{ ( is_array(old ( 'criterios' ) ) && in_array($id_criterio, old ('criterios' )) ) ? ' checked ' : '' }}>
+                      {{ $nombre_criterio }}
+                      </div>
+                  @endforeach
+                  <br>
+                  @error('criterios')
+                      <small class="text-danger" role="alert">
+                          {{ $message }}
+                      </small>
+                  @enderror
+                  @else
+                    <div class="alert alert-secondary">No se encontraron criterios registrados.</div>
+                    @error('criterios')
+                        <small class="text-danger" role="alert">
+                            {{ $message }}
+                        </small>
+                    @enderror
+                @endif
+              </div>
               <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">Guardar</button>
               </div>
