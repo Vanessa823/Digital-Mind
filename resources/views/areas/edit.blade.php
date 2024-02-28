@@ -20,14 +20,6 @@
             @csrf
             @method('PUT')
             <div class="col-md-6">
-                
-                @error('nombre_area') 
-                    <small class="text-danger">
-                        {{$message}}
-                    </small>    
-                @enderror 
-            </div>
-            <div class="col-md-6">
                 <label for="criterios" class="form-label">Criterios</label><br>
                   
                 @if(sizeof($criterios) > 0)
